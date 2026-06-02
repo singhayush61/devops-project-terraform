@@ -80,7 +80,7 @@ resource "aws_instance" "web" {
 
                 docker run -d -p 5000:5000 \
                 --restart unless-stopped \
-                ayushsingh0/devops-project-terraform:latest
+                ayushsingh0/devops-project-terraform:v1
                 EOF
 
   tags = {

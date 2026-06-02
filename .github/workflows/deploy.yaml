@@ -28,13 +28,13 @@ jobs:
       - name: Build Docker Image
         run: |
           docker build \
-          -t ayushsingh0/devops-project-terraform:${{ github.sha }} \
+          -t ayushsingh0/devops-project-terraform:v1 \
           ../app
 
       # Push Image
       - name: Push Docker Image
         run: |
-          docker push ayushsingh0/devops-project-terraform:${{ github.sha }}
+          docker push ayushsingh0/devops-project-terraform:v1
 
       # AWS Credentials
       - name: Configure AWS Credentials
