@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevOps Voting App</title>
+</head>
+<body>
+    <h1>Favorite DevOps Tool</h1>
+
+    <form method="POST">
+        <button type="submit" name="vote" value="Terraform">
+            Vote Terraform
+        </button>
+
+        <button type="submit" name="vote" value="Docker">
+            Vote Docker
+        </button>
+    </form>
+
+    <h2>Results</h2>
+
+    <p>Terraform: {{ votes["Terraform"] }}</p>
+    <p>Docker: {{ votes["Docker"] }}</p>
+
+</body>
+</html>
