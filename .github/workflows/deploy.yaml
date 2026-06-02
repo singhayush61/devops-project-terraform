@@ -23,8 +23,8 @@ jobs:
 
     - name: Build Image
       run: |
-        docker build -t ayushsingh0/devops-app:${{ github.sha }} ./app
+        docker build -t ayushsingh0/devops-project-terraform:${{ github.sha }} ./app
 
     - name: Push Image
       run: |
-        docker push ayushsingh0/devops-app:${{ github.sha }}
+        docker push ayushsingh0/devops-project-terraform:${{ github.sha }}
