@@ -67,7 +67,7 @@ resource "aws_security_group" "devops_sg" {
 
 resource "aws_instance" "web" {
   ami                    = "ami-0685bcc683dadb6b9"
-  instance_type          = "t2.micro"
+  instance_type          = "t3.micro"
   subnet_id              = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.devops_sg.id]
 
