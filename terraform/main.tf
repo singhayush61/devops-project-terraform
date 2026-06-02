@@ -78,10 +78,9 @@ resource "aws_instance" "web" {
                 systemctl start docker
                 systemctl enable docker
 
-                docker run -d \
+                docker run -d -p 5000:5000 \
                 --restart unless-stopped \
-                -p 5000:5000 \
-                ayushsingh0/devops-app:v1
+                ayushsingh0/devops-project-terraform:latest
                 EOF
 
   tags = {
