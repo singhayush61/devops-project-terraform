@@ -2,24 +2,110 @@
 <html>
 <head>
     <title>DevOps Voting App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .container {
+            background: rgba(255,255,255,0.1);
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        button {
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .terraform {
+            background: #7B42BC;
+            color: white;
+        }
+
+        .docker {
+            background: #2496ED;
+            color: white;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+        }
+
+        .results {
+            margin-top: 30px;
+        }
+
+        .bar {
+            height: 25px;
+            border-radius: 10px;
+            margin: 10px auto;
+        }
+
+        .terraform-bar {
+            background: #7B42BC;
+        }
+
+        .docker-bar {
+            background: #2496ED;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Favorite DevOps Tool</h1>
+
+<div class="container">
+
+    <h1>🚀 DevOps Tool Voting App</h1>
 
     <form method="POST">
-        <button type="submit" name="vote" value="Terraform">
+        <button class="terraform"
+                type="submit"
+                name="vote"
+                value="Terraform">
             Vote Terraform
         </button>
 
-        <button type="submit" name="vote" value="Docker">
+        <button class="docker"
+                type="submit"
+                name="vote"
+                value="Docker">
             Vote Docker
         </button>
     </form>
 
-    <h2>Results</h2>
+    <div class="results">
+        <h2>Live Results</h2>
 
-    <p>Terraform: {{ votes["Terraform"] }}</p>
-    <p>Docker: {{ votes["Docker"] }}</p>
+        <p>Terraform: {{ votes["Terraform"] }}</p>
+        <div class="bar terraform-bar"
+             style="width: {{ votes['Terraform'] * 20 }}px;">
+        </div>
+
+        <p>Docker: {{ votes["Docker"] }}</p>
+        <div class="bar docker-bar"
+             style="width: {{ votes['Docker'] * 20 }}px;">
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
